@@ -1,0 +1,130 @@
+.calendar-container {
+    padding: 0;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.calendar-header h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-text-main);
+    font-family: 'Outfit', sans-serif;
+}
+
+.calendar-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background-color: var(--color-border);
+    gap: 1px;
+}
+
+.calendar-day-header {
+    background-color: #f8fafc;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    letter-spacing: 0.05em;
+}
+
+.calendar-day {
+    background-color: white;
+    min-height: 140px;
+    padding: 1rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    position: relative;
+}
+
+.calendar-day:hover {
+    background-color: #f1f5f9;
+    z-index: 1;
+}
+
+.calendar-day.empty {
+    background-color: #fcfdfe;
+    cursor: default;
+}
+
+.day-number {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-text-secondary);
+}
+
+.calendar-day:hover .day-number {
+    color: var(--color-primary);
+}
+
+.day-requests {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.calendar-req-pill {
+    font-size: 11px;
+    font-weight: 700;
+    background-color: white;
+    padding: 0.4rem 0.6rem;
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.1s ease;
+}
+
+.calendar-req-pill:hover {
+    transform: translateX(2px);
+    box-shadow: var(--shadow-md);
+}
+
+.calendar-req-pill.preventive {
+    color: var(--color-primary);
+    border-left: 3px solid var(--color-primary);
+}
+
+.calendar-req-pill.corrective {
+    color: var(--color-scrap);
+    border-left: 3px solid var(--color-scrap);
+}
+
+.calendar-eq-pill {
+    font-size: 11px;
+    font-weight: 800;
+    background-color: #f0fdf4;
+    color: #166534;
+    padding: 0.4rem 0.6rem;
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-left: 3px solid #22c55e;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.1s ease;
+}
+
+.calendar-eq-pill:hover {
+    transform: translateX(2px);
+    box-shadow: var(--shadow-md);
+}
